@@ -160,24 +160,8 @@ module.exports = {
             }
           },
           {
-            test: /\.worker\.js$/,
+            test: /\.worker\.(js|ts)$/,
             use: { loader: require.resolve("worker-loader") }
-          },
-          {
-            test: /\.worker\.ts$/,
-            use: [
-              {
-                loader: require.resolve("worker-loader")
-              },
-              {
-                loader: require.resolve("ts-loader"),
-                options: {
-                  // disable type checker - we will use it in fork plugin
-                  transpileOnly: true,
-                  configFile: paths.appTsProdConfig
-                }
-              }
-            ]
           },
           {
             test: /\.(js|jsx|mjs)$/,
