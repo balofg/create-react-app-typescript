@@ -164,15 +164,15 @@ module.exports = {
             test: /\.worker\.ts$/,
             use: [
               {
-                loader: require.resolve("worker-loader")
-              },
-              {
                 loader: require.resolve("ts-loader"),
                 options: {
                   // disable type checker - we will use it in fork plugin
                   transpileOnly: true,
                   configFile: paths.appTsProdConfig
                 }
+              },
+              {
+                loader: require.resolve("worker-loader")
               }
             ]
           },
